@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
-@RestController(value = "" + value)
+@RestController
 public @interface RemoteTransaction {
     
     String type() default "optimistic";
