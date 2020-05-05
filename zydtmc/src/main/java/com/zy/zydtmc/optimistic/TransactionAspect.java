@@ -36,6 +36,8 @@ public class TransactionAspect {
         if(annotation != null && "optimistic".equals(annotation.value())){
             TransactionUtil.createTransaction();
         }
+        joinPoint.proceed();
+        
     }
     
 }
