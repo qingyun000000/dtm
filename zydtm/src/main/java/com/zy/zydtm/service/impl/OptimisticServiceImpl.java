@@ -1,7 +1,7 @@
 package com.zy.zydtm.service.impl;
 
 import cn.whl.commonutils.token.SimpleLongToken;
-import cn.whl.commonutils.token.TokenTool;
+import cn.whl.commonutils.token.TokenUtils;
 import com.alibaba.fastjson.JSON;
 import com.zy.zydtm.optimistic.domain.po.Job;
 import com.zy.zydtm.optimistic.domain.po.Transaction;
@@ -34,7 +34,7 @@ public class OptimisticServiceImpl implements OptimisticService{
 
     @Override
     public CreateResponse create(CreateRequest createTransactionRequest) throws Exception{
-        String transactionToken = TokenTool.createToken(new Date().getTime() + "", new SimpleLongToken());
+        String transactionToken = TokenUtils.createToken(new Date().getTime() + "", new SimpleLongToken());
         Transaction newTransaction = new Transaction();
         newTransaction.setCreateUserId(createTransactionRequest.getCreateUserId());
         

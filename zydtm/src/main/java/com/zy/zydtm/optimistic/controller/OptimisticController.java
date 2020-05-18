@@ -2,7 +2,7 @@ package com.zy.zydtm.optimistic.controller;
 
 import cn.whl.commonutils.service.result.ResultParam;
 import cn.whl.commonutils.service.result.ServiceResult;
-import cn.whl.commonutils.service.result.ServiceResultTool;
+import cn.whl.commonutils.service.result.ServiceResultUtils;
 import com.zy.zydtm.optimistic.domain.vo.CreateRequest;
 import com.zy.zydtm.optimistic.domain.vo.JobSubmitRequest;
 import com.zy.zydtm.optimistic.domain.vo.JoinRequest;
@@ -32,7 +32,7 @@ public class OptimisticController {
      */
     @PostMapping("/create")
     public ServiceResult create(CreateRequest createTransactionRequest){
-        ServiceResult result = ServiceResultTool.action(ResultParam.Data, ()->service.create(createTransactionRequest));
+        ServiceResult result = ServiceResultUtils.action(ResultParam.Data, ()->service.create(createTransactionRequest));
         return result;
     }
     
@@ -43,7 +43,7 @@ public class OptimisticController {
      */
     @PostMapping("/join")
     public ServiceResult join(JoinRequest joinRequest){
-        ServiceResult result = ServiceResultTool.action(ResultParam.Data, ()->service.join(joinRequest));
+        ServiceResult result = ServiceResultUtils.action(ResultParam.Data, ()->service.join(joinRequest));
         return result;
     }
     
@@ -54,7 +54,7 @@ public class OptimisticController {
      */
     @PostMapping("/jobSubmit")
     public ServiceResult jobSubmit(JobSubmitRequest jobSubmitRequest){
-        ServiceResult result = ServiceResultTool.action(()->service.jobSubmit(jobSubmitRequest));
+        ServiceResult result = ServiceResultUtils.action(()->service.jobSubmit(jobSubmitRequest));
         return result;
     }
     
@@ -65,7 +65,7 @@ public class OptimisticController {
      */
     @PostMapping("/rollback")
     public ServiceResult rollback(RollbackRequest rollbackRequest){
-        ServiceResult result = ServiceResultTool.action(ResultParam.Data, ()->service.rollback(rollbackRequest));
+        ServiceResult result = ServiceResultUtils.action(ResultParam.Data, ()->service.rollback(rollbackRequest));
         return result;
     }
     
@@ -76,7 +76,7 @@ public class OptimisticController {
      */
     @PostMapping("/submit")
     public ServiceResult submit(SubmitRequest submitRequest){
-        ServiceResult result = ServiceResultTool.action(ResultParam.Data, ()->service.submit(submitRequest));
+        ServiceResult result = ServiceResultUtils.action(ResultParam.Data, ()->service.submit(submitRequest));
         return result;
     }
 }

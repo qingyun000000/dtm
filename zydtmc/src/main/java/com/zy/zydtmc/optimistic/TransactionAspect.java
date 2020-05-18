@@ -1,15 +1,10 @@
 package com.zy.zydtmc.optimistic;
 
 import com.zy.zydtmc.annotation.RemoteTransaction;
-import com.zy.zydtmc.utils.HttpUtil;
 import java.lang.reflect.Method;
-import org.apache.http.client.HttpClient;
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
